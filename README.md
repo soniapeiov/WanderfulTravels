@@ -30,7 +30,10 @@ Subnet: `192.168.56.0/24` (Host-Only `vboxnet0`) · Domain: `wanderful.local`
 
 ```
 ├── WanderfulTravels_OSA_FP.pdf   # Full project report (architecture, configs, screenshots, troubleshooting)
-├── configs/                      # Exported config files (netplan, bind9, dhcpd, samba, apache, openvpn, backup.sh)
+├── configs/                      # Exported config files, grouped by VM
+│   ├── srv-infra/                # Netplan, BIND9 zones, DHCP, Samba, OpenVPN server config
+│   ├── srv-web/                  # Netplan, Apache VirtualHost, wp-config.php, sshd_config, backup.sh
+│   └── srv-client/                # Netplan / cloud-init
 └── README.md
 ```
 
@@ -40,7 +43,7 @@ Subnet: `192.168.56.0/24` (Host-Only `vboxnet0`) · Domain: `wanderful.local`
 - Diagnosed Apache serving the default page instead of WordPress (VirtualHost config file didn't exist before `a2ensite`)
 - Recovered `srv-infra` from an accidental DHCP self-lease that conflicted with its static IP
 
-See the [PDF](./WanderfulTravels_OSA_FP.pdf) (§6) for the full list of problems and fixes.
+See the [PDF](./WanderfulTravels_OSA_FP.pdf) for the full list of problems and fixes.
 
 ## Future improvements
 
