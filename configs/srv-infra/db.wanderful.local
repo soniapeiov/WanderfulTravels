@@ -1,0 +1,7 @@
+$TTL 604800
+@ IN SOA srv-infra.wanderful.local. admin.wanderful.local (
+	2024010101 604800 86400 2419200 604800 )
+@ IN NS srv-infra.wanderful.local.
+srv-infra	IN A 192.168.56.10
+srv-web		IN A 192.168.56.20
+www		IN A 192.168.56.20
